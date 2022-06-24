@@ -1,14 +1,14 @@
 <template>
-  <AllinOne />
+  <WebFrame />
 </template>
 
 <script>
-import AllinOne from "@/components/framework/AllinOne";
+import WebFrame from "@/components/framework/Index";
 
 export default {
   name: 'app',
   components: {
-    AllinOne
+    WebFrame,
   }
 }
 </script>
