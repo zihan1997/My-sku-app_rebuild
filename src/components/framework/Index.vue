@@ -19,20 +19,27 @@ export default {
     MyHeader,
     SideBar,
   },
-  data(){
-
-  }
+  // data(){
+  //
+  // }
 }
 
 
 </script>
 
 <style>
+
+.layout-container {
+  margin: 0 0 0 0;
+}
+
 /* Web Icon */
 #Project-Icon {
+  display: inline-flex;
   height: 50px;
   width: 200px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(74, 78, 83);
 }
 
@@ -55,7 +62,8 @@ export default {
 .sider {
   display: flex;
   /*margin-top: 100px;*/
-  background-color: rgb(54, 57, 42);
+  background-color: rgb(54, 57, 62);
+  /*height: auto;*/
 }
 .sider ul{
   color: rgb(235, 235, 235);
@@ -66,8 +74,9 @@ export default {
 
 /* Content */
 .layout-container .el-main {
+  margin-bottom: 10px;
   padding: 1px;
-  height: fit-content;
+  height: 90vh;
 }
 
 </style>

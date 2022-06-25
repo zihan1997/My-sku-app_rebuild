@@ -4,7 +4,7 @@
       <el-menu id="Project-Icon">
         icon
       </el-menu>
-      <el-menu>
+      <el-menu >
         <el-icon ><HomeFilled /></el-icon> Home
       </el-menu>
       <el-menu index="2">
