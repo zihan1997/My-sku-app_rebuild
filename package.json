@@ -11,7 +11,8 @@
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "element-plus": "2.2.6",
-    "@element-plus/icons-vue": "2.0.6"
+    "@element-plus/icons-vue": "2.0.6",
+    "vue-router": "4.0.16"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

@@ -41,6 +41,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgb(74, 78, 83);
+  color: white;
 }
 
 /* Web Header */
@@ -58,18 +59,6 @@ export default {
   right: 20px;
 }
 
-/* Web Side bar */
-.sider {
-  display: flex;
-  /*margin-top: 100px;*/
-  background-color: rgb(54, 57, 62);
-  /*height: auto;*/
-}
-.sider ul{
-  color: rgb(235, 235, 235);
-  text-align: center;
-  background-color: inherit;
-}
 
 
 /* Content */
