@@ -1,10 +1,13 @@
 <template>
+  <h1 class="table-title">Product List</h1>
   <el-table
     :data="products"
-    fixed
-    :width="700"
-    height="600"
+    auto
+    :width="550"
+    :height="550"
+    :border="true"
     @row-click="handleRow"
+    show-summary
   >
     <el-table-column prop="code" label="Code"></el-table-column>
     <el-table-column prop="name" label="Name"></el-table-column>
@@ -56,11 +59,11 @@ export default {
 </script>
 
 <style scoped>
-.el-table {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-th div.cell{
+.table-title {
   text-align: center;
+}
+.el-table {
+  padding: 5px;
+  background-color: whitesmoke;
 }
 </style>

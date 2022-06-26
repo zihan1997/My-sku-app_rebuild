@@ -1,17 +1,18 @@
 <template>
   <el-main>
-    <ProductListing />
+<!--    <ProductListing />-->
+    <router-view></router-view>
   </el-main>
 </template>
 
 <script>
 
-import ProductListing from "@/components/products/ProductListing";
+// import ProductListing from "@/components/products/ProductListing";
 
 export default {
   name: "ContentArea",
   components: {
-    ProductListing
+    // ProductListing
   },
 }
 </script>

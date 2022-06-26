@@ -36,7 +36,7 @@ export default {
 /* Web Icon */
 #Project-Icon {
   display: inline-flex;
-  height: 50px;
+  height: 60px;
   width: 200px;
   justify-content: center;
   align-items: center;
@@ -64,8 +64,11 @@ export default {
 /* Content */
 .layout-container .el-main {
   margin-bottom: 10px;
-  padding: 1px;
+  padding: 20px;
   height: 90vh;
+  background-color: #f0f3f8;
+  /*margin: 20px;*/
+  border: 200px;
 }
 
 </style>
