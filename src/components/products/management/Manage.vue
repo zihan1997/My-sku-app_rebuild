@@ -1,24 +1,16 @@
 <template>
-  <el-tabs type="border-cards" class="manage-tabs">
-    <el-tab-pane>
-      <template #label>
-        <span class="custom-tabs-label">
-          <el-icon><Calendar/></el-icon>
-          <span>Route</span>
-        </span>
-      </template>
-      Route
-    </el-tab-pane>
-    <el-tab-pane label="Config">Hello</el-tab-pane>
+  <el-tabs type="border-card" class="manage-tabs">
+    <el-tab-pane label="Search"> <SearchProduct/> </el-tab-pane>
+    <el-tab-pane label="Add New">Add new here</el-tab-pane>
   </el-tabs>
 </template>
 
 <script>
-import { Calendar } from '@element-plus/icons-vue'
+import SearchProduct from "@/components/products/management/tabs/SearchProduct";
 export default {
   name: "ManageProducts",
   components: {
-    Calendar
+    SearchProduct
   }
 }
 </script>
