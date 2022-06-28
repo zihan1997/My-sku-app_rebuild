@@ -8,11 +8,13 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "element-plus": "2.2.6",
     "@element-plus/icons-vue": "2.0.6",
-    "vue-router": "4.0.16"
+    "core-js": "^3.8.3",
+    "element-plus": "2.2.6",
+    "vue": "^3.2.13",
+    "vue-router": "4.0.16",
+    "vuex": "4.0.2",
+    "axios": "0.27.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -21,7 +23,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "@faker-js/faker": "^7.3.0"
   },
   "eslintConfig": {
     "root": true,

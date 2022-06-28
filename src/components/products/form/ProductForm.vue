@@ -15,11 +15,11 @@
     </el-form-item>
 
     <el-form-item label="Price">
-      <el-input v-model="productForm.price"/>
+      <el-input-number v-model="productForm.price"/>
     </el-form-item>
 
     <el-form-item label="Quantity">
-      <el-input v-model="productForm.quantity"/>
+      <el-input-number v-model="productForm.quantity"/>
     </el-form-item>
 
     <el-form-item label="Date">
@@ -33,8 +33,9 @@
     </el-form-item>
 
     <el-form-item>
-      <el-button type="primary" @click.prevent="onSubmit">Search</el-button>
+      <el-button type="primary" @click.prevent="onSubmit">Add</el-button>
       <el-button type="warning" @click="resetForm">Reset</el-button>
+      <el-button @click="generate">Generate</el-button>
     </el-form-item>
 
   </el-form>
@@ -42,36 +43,48 @@
 
 <script>
 import { reactive} from "vue";
+import { useStore } from 'vuex';
+import { createName, createCode, createPrice, createQuantity } from '../productGenerator'
 
 export default {
   name: "ProductForm",
+  mounted() {
+    this.generate();
+  },
   setup(){
 
     const productForm = reactive({
       code: '',
       name: '',
-      price: null,
-      quantity: null,
+      price: 0,
+      quantity: 0,
       date: new Date().toISOString(),
     });
     const resetForm = () => {
       productForm.code= '';
       productForm.name='';
-      productForm.price=null;
-      productForm.quantity=null;
+      productForm.price=0;
+      productForm.quantity=0;
 
     }
-    const printForm = () => console.log(productForm);
+    const store = useStore();
+
     return {
-      printForm,
       productForm,
-      resetForm
+      resetForm,
+      asyncAdd: (productForm) => store.dispatch('products/addNewProduct', productForm),
     };
   },
   methods: {
     onSubmit(){
-      console.log('submit ' + JSON.stringify(this.productForm))
-      this.printForm()
+      console.log('submit ' + JSON.stringify(this.productForm));
+      this.asyncAdd(this.productForm)
+    },
+    generate(){
+      this.productForm.name = createName();
+      this.productForm.code = createCode();
+      this.productForm.price = createPrice();
+      this.productForm.quantity = createQuantity();
     }
   }
 }

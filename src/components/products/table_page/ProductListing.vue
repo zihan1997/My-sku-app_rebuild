@@ -5,23 +5,23 @@
 
 <script>
 import MyTable from '../TableTemplate/MyTable';
+import { useStore } from 'vuex';
+import {computed} from "vue";
 
 export default {
   name: "ProductListing",
   components: {
     MyTable,
   },
+  setup(){
+    const store = useStore();
+    return {
+      products: computed(() => store.getters["products/getProductList"])
+    }
+  },
   data(){
-    const product = {
-          code: '1234',
-          name: 'test',
-          price: 12,
-          quantity: 2,
-          date: new Date().toISOString()
-        };
     return {
       currentRow: {},
-      products: Array.from({length: 30}).fill(product)
     }
   }
 }
