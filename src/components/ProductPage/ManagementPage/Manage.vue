@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import SearchProduct from "@/components/products/management/tabs/SearchProduct";
-import AddNewProduct from "@/components/products/management/tabs/AddNewProduct";
+import SearchProduct from "@/components/ProductPage/ManagementPage/tabs/SearchProduct";
+import AddNewProduct from "@/components/ProductPage/ManagementPage/tabs/AddNewProduct";
 export default {
   name: "ManageProducts",
   components: {

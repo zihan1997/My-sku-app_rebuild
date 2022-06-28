@@ -1,7 +1,7 @@
 import {createRouter, createWebHashHistory}  from 'vue-router'
-import Products from '../components/products/table_page/ProductListing'
 import HomePage from "@/components/HomePage";
-import ProductsManage from "@/components/products/management/Manage"
+import ProductsManage from "@/components/ProductPage/ManagementPage/Manage"
+import Products from '../components/ProductPage/TablePage/ProductListing'
 
 const routes = [
     {

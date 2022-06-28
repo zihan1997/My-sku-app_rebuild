@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import MyTable from '../TableTemplate/MyTable';
+import MyTable from '../../../layouts/ProductPage/TableTemplate/MyTable';
 import { useStore } from 'vuex';
 import {computed} from "vue";
 

@@ -28,7 +28,7 @@
 
 <script>
 
-import MyTable from "@/components/products/TableTemplate/MyTable";
+import MyTable from "@/layouts/ProductPage/TableTemplate/MyTable";
 import {ElMessage} from "element-plus";
 export default {
   name: 'SearchProduct',

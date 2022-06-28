@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import ProductForm from "@/components/products/form/ProductForm";
+import ProductForm from "@/layouts/ProductPage/form/ProductForm";
 export default {
   name: "AddNewProduct",
   components: {
