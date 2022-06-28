@@ -1,5 +1,5 @@
 import {createRouter, createWebHashHistory}  from 'vue-router'
-import Products from '../components/products/table/ProductListing'
+import Products from '../components/products/table_page/ProductListing'
 import HomePage from "@/components/HomePage";
 import ProductsManage from "@/components/products/management/Manage"
 

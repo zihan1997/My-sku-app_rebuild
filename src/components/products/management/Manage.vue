@@ -1,15 +1,24 @@
 <template>
   <el-tabs type="border-card" class="manage-tabs">
-    <el-tab-pane label="Search"> <SearchProduct/> </el-tab-pane>
-    <el-tab-pane label="Add New">Add new here</el-tab-pane>
+
+    <el-tab-pane label="Search">
+      <SearchProduct/>
+    </el-tab-pane>
+
+    <el-tab-pane label="Add New">
+      <AddNewProduct/>
+    </el-tab-pane>
+
   </el-tabs>
 </template>
 
 <script>
 import SearchProduct from "@/components/products/management/tabs/SearchProduct";
+import AddNewProduct from "@/components/products/management/tabs/AddNewProduct";
 export default {
   name: "ManageProducts",
   components: {
+    AddNewProduct,
     SearchProduct
   }
 }

@@ -3,7 +3,6 @@
       :data="data"
       auto
       :width="550"
-      :height="550"
       :border="true"
       @row-click="handleRow"
       show-summary
@@ -43,5 +42,9 @@ export default {
 </script>
 
 <style scoped>
+
+.el-table {
+  height: fit-content;
+}
 
 </style>
