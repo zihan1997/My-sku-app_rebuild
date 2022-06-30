@@ -33,7 +33,7 @@
     </el-form-item>
 
     <el-form-item>
-      <el-button type="primary" @click.prevent="onSubmit">{{ name }}</el-button>
+      <el-button type="primary" @click.prevent="onSubmit">Submit</el-button>
       <el-button type="warning" @click="resetForm">Reset</el-button>
       <el-button @click="generate">Generate</el-button>
     </el-form-item>
@@ -47,7 +47,6 @@ import { createName, createCode, createPrice, createQuantity } from '../productG
 
 export default {
   name: "ProductForm",
-  props: ['name'],
   emits: ['response'],
   created() {
     this.generate();

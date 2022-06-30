@@ -14,7 +14,7 @@ export const getListById = (id) => {
     })
 }
 
-export const getListByCode = (code) => {
+export const getByCode = (code) => {
     return request({
         url: `/products/code/${code}`,
         method: 'get'
@@ -52,7 +52,7 @@ export const change = (product)=>{
         date: product.date
     };
     return request({
-        url: '/products',
+        url: `/products/code/${data.code}`,
         method: 'patch',
         data: data
     })

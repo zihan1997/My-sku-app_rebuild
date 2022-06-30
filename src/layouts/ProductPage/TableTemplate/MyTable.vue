@@ -22,7 +22,7 @@
     </el-table-column>
   </el-table>
 <!--  <EditDrawer :isDrawer="isDrawerOpen" />-->
-  <EditDrawer :isDrawer="isDrawerOpen" @response="closeDrawer"/>
+  <EditDrawer :isDrawer="isDrawerOpen" @response="closeDrawer" :record="record"/>
 </template>
 
 <script>
@@ -41,6 +41,9 @@ export default {
     handleEdit(index, row) {
       console.log('edit ' + JSON.stringify(index) + " " + JSON.stringify(row))
       this.isDrawerOpen = true;
+
+      this.record = row;
+      console.log(this.record)
     },
     handleDel(index, row) {
       console.log('del ' + JSON.stringify(index) + " " + JSON.stringify(row))
@@ -51,7 +54,8 @@ export default {
   },
   data(){
     return {
-      isDrawerOpen: false
+      isDrawerOpen: false,
+      record: {}
     }
   }
 }
