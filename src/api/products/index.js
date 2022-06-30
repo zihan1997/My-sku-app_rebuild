@@ -57,3 +57,10 @@ export const change = (product)=>{
         data: data
     })
 }
+
+export const del = (product) => {
+    return request({
+        url: `/products/code/${product.code}`,
+        method: 'delete'
+    })
+}

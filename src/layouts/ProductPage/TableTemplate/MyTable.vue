@@ -4,7 +4,6 @@
       auto
       :width="550"
       :border="true"
-      @row-click="handleRow"
       show-summary
   >
     <el-table-column prop="code" label="Code"></el-table-column>
@@ -21,13 +20,12 @@
 
     </el-table-column>
   </el-table>
-<!--  <EditDrawer :isDrawer="isDrawerOpen" />-->
   <EditDrawer :isDrawer="isDrawerOpen" @response="closeDrawer" :record="record"/>
 </template>
 
 <script>
 
-// import { change } from '@/api/products/index'
+import { del } from '@/api/products'
 
 import EditDrawer from "@/layouts/ProductPage/TableActions/EditDrawer";
 export default {
@@ -35,9 +33,7 @@ export default {
   components: {EditDrawer},
   props: ['data'],
   methods: {
-    handleRow(row) {
-      if (this.currentRow !== row) this.currentRow = row;
-    },
+    // Edit record ( current row) by providing a drawer
     handleEdit(index, row) {
       console.log('edit ' + JSON.stringify(index) + " " + JSON.stringify(row))
       this.isDrawerOpen = true;
@@ -45,9 +41,12 @@ export default {
       this.record = row;
       console.log(this.record)
     },
+    // Delete record by API
     handleDel(index, row) {
-      console.log('del ' + JSON.stringify(index) + " " + JSON.stringify(row))
+      del(row).then().catch(() => {})
     },
+
+    // sync the value of drawer (boolean)
     closeDrawer(val){
       this.isDrawerOpen = val;
     }
