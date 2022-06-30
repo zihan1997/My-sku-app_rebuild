@@ -30,6 +30,8 @@
 
 import MyTable from "@/layouts/ProductPage/TableTemplate/MyTable";
 import {ElMessage} from "element-plus";
+import {getListByCode, getListByName} from '@/api/products/index'
+
 export default {
   name: 'SearchProduct',
   components: {MyTable},
@@ -65,6 +67,7 @@ export default {
   },
   methods: {
     onSearch(){
+      this.searchResult = [];
       if(this.selectTag && this.toSearch) {
         ElMessage({
           message: 'Searching...',
@@ -83,11 +86,14 @@ export default {
               break;
             }
             console.log(`${this.selectTag} : ${this.toSearch}`);
-            // submit data
+
+            // search
+            getListByCode(this.toSearch).then(response => this.searchResult.push(...response.data))
             break;
           case "Name":
             console.log("searching for name");
             // submit data
+              getListByName(this.toSearch).then(response => this.searchResult.push(...response.data))
             break;
         }
       }

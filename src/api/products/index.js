@@ -16,7 +16,14 @@ export const getListById = (id) => {
 
 export const getListByCode = (code) => {
     return request({
-        url: `/products/id/${code}`,
+        url: `/products/code/${code}`,
+        method: 'get'
+    })
+}
+
+export const getListByName = (name) => {
+    return request({
+        url: `/products/name/${name}`,
         method: 'get'
     })
 }

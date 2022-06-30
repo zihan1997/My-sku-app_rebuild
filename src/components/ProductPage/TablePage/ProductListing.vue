@@ -1,29 +1,26 @@
 <template>
   <h1 class="table-title">Product List</h1>
-  <MyTable :data="products" />
+  <MyTable :data="data" />
 </template>
 
 <script>
-import MyTable from '../../../layouts/ProductPage/TableTemplate/MyTable';
-import { useStore } from 'vuex';
-import {computed} from "vue";
+import MyTable from '@/layouts/ProductPage/TableTemplate/MyTable';
+import { getList } from "@/api/products";
 
 export default {
   name: "ProductListing",
   components: {
     MyTable,
   },
-  setup(){
-    const store = useStore();
-    return {
-      products: computed(() => store.getters["products/getProductList"])
-    }
-  },
   data(){
     return {
-      currentRow: {},
+      data: []
     }
-  }
+  },
+  created() {
+    getList().then(response => this.data.push(...response.data));
+  },
+
 }
 </script>
 

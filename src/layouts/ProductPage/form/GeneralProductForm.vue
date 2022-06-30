@@ -6,12 +6,12 @@
     ref="vForm"
     @submit.prevent
   >
-    <el-form-item label="Code">
-      <el-input v-model="productForm.code" />
+    <el-form-item label="Code"  >
+      <el-input class="code" v-model="productForm.code" />
     </el-form-item>
 
     <el-form-item label="Name">
-      <el-input v-model="productForm.name" />
+      <el-input class="name" v-model="productForm.name" />
     </el-form-item>
 
     <el-form-item label="Price">
@@ -33,7 +33,7 @@
     </el-form-item>
 
     <el-form-item>
-      <el-button type="primary" @click.prevent="onSubmit">Add</el-button>
+      <el-button type="primary" @click.prevent="onSubmit">{{ name }}</el-button>
       <el-button type="warning" @click="resetForm">Reset</el-button>
       <el-button @click="generate">Generate</el-button>
     </el-form-item>
@@ -43,12 +43,13 @@
 
 <script>
 import { reactive} from "vue";
-import { useStore } from 'vuex';
 import { createName, createCode, createPrice, createQuantity } from '../productGenerator'
 
 export default {
   name: "ProductForm",
-  mounted() {
+  props: ['name'],
+  emits: ['response'],
+  created() {
     this.generate();
   },
   setup(){
@@ -67,18 +68,18 @@ export default {
       productForm.quantity=0;
 
     }
-    const store = useStore();
 
     return {
       productForm,
       resetForm,
-      asyncAdd: (productForm) => store.dispatch('products/addNewProduct', productForm),
     };
   },
   methods: {
     onSubmit(){
-      console.log('submit ' + JSON.stringify(this.productForm));
-      this.asyncAdd(this.productForm)
+      // console.log('submit ' + JSON.stringify(this.productForm));
+      this.$emit('response', this.productForm);
+      // this.asyncAdd(this.productForm)
+      // create(this.productForm).then(() => this.generate() )
     },
     generate(){
       this.productForm.name = createName();
@@ -94,5 +95,11 @@ export default {
 .el-form {
   margin-top: 3%;
   margin-left: 3%;
+}
+.code {
+   width: 220px;
+ }
+.name {
+  width: 220px;
 }
 </style>

@@ -13,7 +13,7 @@
     <el-table-column prop="quantity" label="Quantity"></el-table-column>
     <el-table-column prop="date" label="Date"></el-table-column>
 
-    <el-table-column label="Actions">
+    <el-table-column label="Actions" >
       <template #default="scope">
         <el-button @click="handleEdit(scope.$index, scope.row)" type="primary">Edit</el-button>
         <el-button @click="handleDel(scope.$index, scope.row)" type="danger" >Delete</el-button>
@@ -21,11 +21,18 @@
 
     </el-table-column>
   </el-table>
+<!--  <EditDrawer :isDrawer="isDrawerOpen" />-->
+  <EditDrawer :isDrawer="isDrawerOpen" @response="closeDrawer"/>
 </template>
 
 <script>
+
+// import { change } from '@/api/products/index'
+
+import EditDrawer from "@/layouts/ProductPage/TableActions/EditDrawer";
 export default {
   name: "MyTable",
+  components: {EditDrawer},
   props: ['data'],
   methods: {
     handleRow(row) {
@@ -33,10 +40,19 @@ export default {
     },
     handleEdit(index, row) {
       console.log('edit ' + JSON.stringify(index) + " " + JSON.stringify(row))
+      this.isDrawerOpen = true;
     },
     handleDel(index, row) {
       console.log('del ' + JSON.stringify(index) + " " + JSON.stringify(row))
     },
+    closeDrawer(val){
+      this.isDrawerOpen = val;
+    }
+  },
+  data(){
+    return {
+      isDrawerOpen: false
+    }
   }
 }
 </script>
