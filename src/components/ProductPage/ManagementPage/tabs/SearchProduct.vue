@@ -30,7 +30,7 @@
 
 import MyTable from "@/layouts/ProductPage/TableTemplate/MyTable";
 import {ElMessage} from "element-plus";
-import {getListByCode, getListByName} from '@/api/products/index'
+import {getByCode, getListByName} from '@/api/products/index'
 
 export default {
   name: 'SearchProduct',
@@ -88,7 +88,7 @@ export default {
             console.log(`${this.selectTag} : ${this.toSearch}`);
 
             // search
-            getListByCode(this.toSearch).then(response => this.searchResult.push(...response.data))
+            getByCode(this.toSearch).then(response => this.searchResult.push(...response.data))
             break;
           case "Name":
             console.log("searching for name");

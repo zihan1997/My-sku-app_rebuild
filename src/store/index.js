@@ -1,14 +1,14 @@
 import { createStore, createLogger } from 'vuex';
-import products from './modules/product'
 import user from "@/store/modules/user";
+import getters from './getters'
 
 const debug = process.env.NODE_ENV !== 'production';
 
 const store = createStore({
     modules: {
-        products,
         user
     },
+    getters,
     strict: debug,
     plugins: [createLogger()]
 })

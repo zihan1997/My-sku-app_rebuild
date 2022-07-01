@@ -2,7 +2,7 @@ import { login } from '@/api/login'
 
 const state = () => ({
     username: '',
-    token: typeof Number,
+    token: '',
 });
 
 const mutations = {
@@ -14,15 +14,6 @@ const mutations = {
     }
 };
 
-const getter = {
-    getUsername(state){
-        return state.username;
-    },
-    getToken(state){
-        return state.token;
-    }
-}
-
 const actions = {
     async Login({ commit }, user) {
         try {
@@ -31,6 +22,20 @@ const actions = {
         }catch (e) {
             console.log(e);
         }
+    },
+    async setToken({ commit }, token) {
+        try{
+            await commit('setToken', {token})
+        }catch (e) {
+            console.log(e);
+        }
+    },
+    async setUsername({ commit }, username){
+        try{
+            await commit('setUsername', {username})
+        }catch (e) {
+            console.log(e)
+        }
     }
 }
 
@@ -38,6 +43,5 @@ export default {
     namespaced: true,
     state,
     mutations,
-    getter,
     actions
 }
