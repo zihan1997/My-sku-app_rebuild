@@ -1,24 +1,12 @@
-# vue_element_version
+## Current Development
 
-## Project setup
-```
-npm install
-```
+* HomePage
+![](readme/home.png)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+---
 
-### Compiles and minifies for production
-```
-npm run build
-```
+* Table
+![](readme/table.png)![](readme/table-edit.png)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* Management
+![](readme/manage-addnew.png)![](readme/manage-search.png)
