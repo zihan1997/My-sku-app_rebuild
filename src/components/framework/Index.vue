@@ -1,11 +1,11 @@
 <template>
   <div class="layout-container">
     <el-container >
-      <!--    side bar -->
       <SideBar/>
       <MyHeader/>
     </el-container>
   </div>
+  <router-view></router-view>
 </template>
 
 <script >
@@ -33,16 +33,6 @@ export default {
   margin: 0 0 0 0;
 }
 
-/* Web Icon */
-#Project-Icon {
-  display: inline-flex;
-  height: 60px;
-  width: 200px;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(74, 78, 83);
-  color: white;
-}
 
 /* Web Header */
 .layout-container .el-header {

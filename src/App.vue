@@ -1,14 +1,14 @@
 <template>
-  <WebFrame />
+  <router-view></router-view>
 </template>
 
 <script>
-import WebFrame from "@/components/framework/Index";
+// import WebFrame from "@/components/framework/Index";
 
 export default {
   name: 'app',
   components: {
-    WebFrame,
+    // WebFrame,
   }
 }
 </script>
