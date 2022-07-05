@@ -22,9 +22,6 @@ service.interceptors.response.use(res => {
     if(res.config.url.includes('login') || res.config.url.includes('register')){
         if(res.data.token) {
             localStorage.setItem('token', res.data.token)
-            // console.log("res " + JSON.stringify(res))
-            store.dispatch('user/setToken', res.data.token).then(() => console.log('token is set'))
-            store.dispatch('user/setUsername', res.data.user).then(() => console.log('username is set'))
         }
     }
     return res;

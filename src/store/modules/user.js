@@ -7,10 +7,11 @@ const state = () => ({
 
 const mutations = {
     setUsername(state, payload){
-        state.username = payload.username;
+        state.username = payload.user;
     },
     setToken(state, payload){
         state.token = payload.token;
+        localStorage.token = payload.token
     }
 };
 
@@ -18,7 +19,9 @@ const actions = {
     async Login({ commit }, user) {
         try {
             const response = await login(user.username, user.password);
-            commit('setToken', response.token);
+            if(response.status !== 200) throw new DOMException();
+            commit("setUsername", {user: user.username})
+
         }catch (e) {
             console.log(e);
         }

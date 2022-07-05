@@ -2,9 +2,7 @@
   <el-container class="header_content">
     <el-header style="text-align: right; font-size: 18px">
       <div class="toolbar">
-        header
-<!--    todo del  -->
-        <el-button @click="onClick">Login</el-button>
+        {{ username }}
       </div>
     </el-header>
     <ContentArea/>
@@ -13,23 +11,26 @@
 
 <script>
 import ContentArea from './ContentArea'
-import { login } from '@/api/login'
+import { useStore } from 'vuex'
+import {computed} from "vue";
+
 export default {
   name: "WebHeader",
   components: {
     ContentArea
   },
-  methods: {
-    // todo del
-    onClick(){
-      console.log("header login here");
-      login('test', 'test')
-          .then((response) => localStorage.setItem('token', response.data.token))
+  setup(){
+    const store = useStore();
+
+    return {
+      username: computed(() => store.getters.username)
     }
   }
 }
 </script>
 
 <style scoped>
-
+.toolbar {
+  margin-right: 5px;
+}
 </style>
